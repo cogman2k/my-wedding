@@ -23,11 +23,11 @@ window.onload = (event) =>{
 			}
 			snowFall.snow(document.getElementsByTagName('body')[0], {image : SNOW_Picture, minSize: 15, maxSize:32, flakeCount:flakeCount, maxSpeed: 3, minSpeed: 1});
 		}else if(biicore.effect.type == 'snow') {
-			let flakeCount = 250;
+			let flakeCount = 100;
 			if (typeof biicore.template_id !== 'undefined' && special_custom.includes(biicore.template_id)) {
-				flakeCount = 50;
+				flakeCount = 25;
 				if(window.innerWidth <= 1200) {
-					flakeCount = 30;
+					flakeCount = 25;
 				}
 				if(window.innerWidth <= 650) {
 					flakeCount = 25;

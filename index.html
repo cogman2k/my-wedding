@@ -72,7 +72,7 @@
           max-width: none;
         " />
   </div>
-  <!-- <div class="loader" style="display: block"></div> -->
+  <div class="loader"></div>
   <div class="main">
     <a href="#" class="js-nav-toggle nav-toggle nav-white"><i></i></a>
     <div id="offcanvas">
@@ -654,34 +654,24 @@
   </div>
 
   <script type="text/javascript">
-    function sanitizeJsonString(jsonString) {
-      return jsonString
-        .replace(/[\n\r\t]/g, "")
-        .replace(/[\u0000-\u001F]+/g, "")
-        .replace(/,(\s*[}\]])/g, "$1");
-    }
-    function parseJsonRecursively(jsonString) {
-      let sanitizedString = sanitizeJsonString(jsonString);
-      let parsed = JSON.parse(sanitizedString);
-      Object.keys(parsed).forEach(function (key) {
-        try {
-          let checkValue = JSON.parse(parsed[key]);
-          if (checkValue && checkValue.constructor === Object) {
-            parsed[key] = checkValue;
-          }
-        } catch (e) { }
-      });
-      return parsed;
-    }
-    let biicore = parseJsonRecursively(
-      '{"template_id":"6174ee7a7a1c7661fb0a671c","templatePremium":false,"themeRoot":"https:\/\/preview.iwedding.info\/templates\/template6","webroot":"https:\/\/preview.iwedding.info","coreSite":"https:\/\/biihappy.com","webToken":"61990349db8f76231c132068","isPremium":true,"bgMusic":".\/mp3\/cuoithoi.mp3","alert":{"title":"L\u1eddi c\u1ea3m \u01a1n t\u1eeb D\u00e2u &amp; R\u1ec3","content":"Xin ch\u00e2n th\u00e0nh c\u1ea3m \u01a1n to\u00e0n th\u1ec3 m\u1ecdi ng\u01b0\u1eddi \u0111\u00e3 g\u1eedi l\u1eddi ch\u00fac cho v\u1ee3 ch\u1ed3ng ch\u00fang em!","timeout":5000,"status":2,"cancel_button_text":""},"effect":"{\\"type\\":\\"snow\\"}","logo":"https:\/\/iwedding.info\/common\/imgs\/bii.png?v=20210131","url_landing_page":"https:\/\/biihappy.com\/iwedding","isAutoPlay":true,"footer_title":"iWedding | N\u1ec1n t\u1ea3ng t\u1ea1o website \u0111\u00e1m c\u01b0\u1edbi mi\u1ec5n ph\u00ed t\u1eeb Biihappy","footer_title_mobile":"T\u1ea1o website \u0111\u00e1m c\u01b0\u1edbi mi\u1ec5n ph\u00ed"}'
-    );
+    const biicore = {
+        template_id: '6174ee7a7a1c7661fb0a671c',
+        templatePremium: ('0' === '1'),
+        themeRoot: '',
+        webroot: '',
+        coreSite: '',
+        webToken: '6672b110ba11d3f9880c59e1',
+        isPremium: ('' === '1'),
+        bgMusic: './mp3/cuoithoi.mp3',
+        alert: JSON.parse('[]'),
+        effect: JSON.parse('{\"type\":\"snow\"}')
+    };
   </script>
-  <div id="lightboxOverlay" class="lightboxOverlay" style="display: none"></div>
   <script src="./assets/jquery-plugin-collection.js"></script>
   <script src="./assets/script.js"></script>
   <script src="./assets/bii.js"></script>
   <script src="./assets/insertTextAtCursor.js"></script>
+  <script type="module" src="./assets/init.js"></script>
   <script type="text/javascript">
     if (typeof toastMessageWishes === "function") {
       toastMessageWishes(dataWishes, "wishes");
