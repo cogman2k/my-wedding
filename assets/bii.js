@@ -23,14 +23,14 @@ window.onload = (event) =>{
 			}
 			snowFall.snow(document.getElementsByTagName('body')[0], {image : SNOW_Picture, minSize: 15, maxSize:32, flakeCount:flakeCount, maxSpeed: 3, minSpeed: 1});
 		}else if(biicore.effect.type == 'snow') {
-			let flakeCount = 100;
+			let flakeCount = 50;
 			if (typeof biicore.template_id !== 'undefined' && special_custom.includes(biicore.template_id)) {
-				flakeCount = 25;
+				flakeCount = 30;
 				if(window.innerWidth <= 1200) {
-					flakeCount = 25;
+					flakeCount = 30;
 				}
 				if(window.innerWidth <= 650) {
-					flakeCount = 25;
+					flakeCount = 30;
 				}
 			}
 			snowFall.snow(document.getElementsByTagName('body')[0], {round : true, shadow : true, flakeCount : flakeCount, minSize: 1, maxSize:8});
@@ -104,9 +104,10 @@ if(biicore.bgMusic){
 	setTimeout(function(){
 		if (audioPlayer.canPlayType("audio/mpeg")) {
 			audioPlayer.setAttribute("src", biicore.bgMusic);
+			audioPlayer.setAttribute("autoplay", "autoplay");
 			document.getElementsByClassName("bii-player")[0].style.display = "block";
 		}
-		audioPlayer.volume = 0.3;
+		audioPlayer.volume = 0.5;
 		audioPlayer.setAttribute("controls", "controls");
 		document.body.appendChild(audioPlayer);
 	}, 1000);
@@ -135,6 +136,7 @@ if(biicore.bgMusic){
 			document.getElementById("playerVolumeOn").style.display = "none";
 		}
 	}
+
 	document.write(`
 	<style type="text/css">
 	@-webkit-keyframes biilogo-pulse {
