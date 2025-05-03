@@ -3,12 +3,12 @@
 
 	$(window).on('load', function() {
 		$('.loader').delay(600).fadeOut('slow');
-		// setTimeout(function() {
 		setTimeout(function() {
 			$('.cover .display-tc').addClass('fadeInUp');
 		}, 800);
 		
 	});
+
 
     if ($("#donate-modal").length && $(".buttonDonate").length  && $(".donate-modal-close").length) {
 		$(document).on('click','.buttonDonate',function(){

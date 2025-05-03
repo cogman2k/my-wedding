@@ -190,7 +190,7 @@ ol {
 	width: 0;
 	height: 0;
 	overflow: hidden;
-	z-index: 1010;
+	z-index: 999999;
 	background-color: #FFFFFF;
 	width: 100%;
 	height: 100%;
@@ -445,7 +445,7 @@ img {
 	background: none;
 }
 .navbar ul li a:hover {
-	margin-top: -3px;
+	color: #f23b43;
 }
 .navbar ul li.has-dropdown {
 	position: relative;
@@ -1381,7 +1381,8 @@ ul.timeline > li > .timeline-panel{
 .invitation .send-button {
 	margin-top: 10px;
 }
-.invitation .send-button:hover {
+.invitation .send-button:hover,
+.btn-view-map {
     box-shadow: 0 0 0 2px #fff inset, 0 0 0 2px #f23b43!important;
     -webkit-box-shadow: 0 0 0 2px #fff inset, 0 0 0 2px #f23b43!important;
 }
@@ -2603,6 +2604,9 @@ footer .copyright .block {
   .lg-outer .lg-toogle-thumb{
     right: 0;
     top: -90px;
+  }
+  #wishes{
+	background-position:82% center;
   }
 }
 .lg-backdrop, .lg-outer{
